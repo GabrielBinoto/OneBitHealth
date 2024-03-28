@@ -54,7 +54,7 @@ function validationImc(){
     }
 
 }
-
+//comentario
     return(
         <View style={styles.formContext}>
             {imc == null ? 
