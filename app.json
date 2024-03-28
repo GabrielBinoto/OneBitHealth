@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "bitcoin",
-    "slug": "bitcoin",
+    "name": "OneBit",
+    "slug": "OneBit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,18 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.gabrielbinoto.onebit"
     },
+    "package": "com.gabriel.onebit",
+    "versionCode": 1,
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2b8f9976-d5a6-4c9a-8bd8-1a927140d663"
+      }
     }
   }
 }
