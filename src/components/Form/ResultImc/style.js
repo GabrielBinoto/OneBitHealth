@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
         fontSize:18,
         color:"#ff0043",
         fontWeight:"bold",
+        paddingBottom:20,
     },
 
     information:{
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         paddingHorizontal: 30,
     },
+
 
 });
 

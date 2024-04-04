@@ -13,13 +13,13 @@ const onShare = async () =>{
     return(
         <View style={styles.resultImc}>
             <View  style={styles.boxSharebutton}>
-            <Text style={styles.information}>{props.messageResultImc}</Text>
-            <Text style={styles.numberImc}>{props.resultImc}</Text>
-                <TouchableOpacity  style={styles.shared}
-                    onPress={onShare}               
-                >
-                <Text style={styles.sharedText}>Compartilhar IMC</Text>
-                </TouchableOpacity> 
+                <Text style={styles.information}>{props.messageResultImc}</Text>
+                <Text style={styles.numberImc}>{props.resultImc}</Text>
+                    <TouchableOpacity  style={styles.shared}
+                        onPress={onShare}               
+                    >
+                    <Text style={styles.sharedText}>Compartilhar IMC</Text>
+                    </TouchableOpacity> 
             </View>
         </View>
     );

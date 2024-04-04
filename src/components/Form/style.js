@@ -37,17 +37,16 @@ const styles = StyleSheet.create({
     buttonCalculator:{
         borderRadius: 50,
         alignItems: "center",
-        justifyContent: "center",
-        width: "90%",
+        width: "60%",
         backgroundColor: "#ff0043",
         paddingTop: 14,
         paddingBottom: 14,
-        marginLeft: 12,
-        marginTop:30,
+        marginBottom:50,
+        marginLeft: 90,
     },
 
     textButtonCalculator:{
-        fontSize: 20,
+        fontSize: 16,
         color: "#ffffff",
     },
 
@@ -60,8 +59,46 @@ const styles = StyleSheet.create({
 
     exibiResult:{
         width: "100%",
-        height: "50%",
+        height: "100%",
     },
+
+    listImc:{
+        paddingLeft:20,
+        borderTopWidth:2,
+        borderRadius:10,
+        borderColor:"red",
+        marginTop:20,
+        height:"20%",
+        marginBottom:20,
+    },
+
+    resultImcItem:{
+        paddingTop: 20,
+        color: "black",
+        fontSize:20,
+        height:50,
+        width: "100%",
+        marginLeft:10,
+    },
+
+    textResulItemList:{
+        fontSize: 18,
+        color: "black",
+
+    },
+
+    textResulItemListData:{
+        fontSize:18,
+        color:"#b94866",
+    },
+
+    totalIMC:{
+        color:"#b94866",
+        fontSize:18,
+    }
+
+
+
 
 });
 

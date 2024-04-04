@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {View, Text, TextInput, Button ,Vibration , TouchableOpacity, Keyboard , Pressable } from "react-native"
+import {View, Text, TextInput, Vibration, TouchableOpacity, Keyboard, Pressable, FlatList } from "react-native"
 import ResultImc from "./ResultImc";
 import styles from "./style";
 
@@ -11,15 +11,34 @@ const [messageImc , setMessageImc]= useState("Preencha o Peso/Altura");
 const [imc, setImc]= useState(null);
 const [textButton , setTextButton]= useState("Calcular");
 const [errorMessage , setErrorMessage] = useState(null);
+const [imcList , setImcList] = useState([])
+
+function formatarData(milliseconds) {
+    const data = new Date(milliseconds);
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0');
+    const ano = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+}
+
 
 
 // Funcao para calcular o Imc
 function imcCalculator(){
     // Formatado para calculo
-    let heightFormat = height.replace(",", ".");
-    let weightFormat = weight.replace(",", ".");
-
-    return setImc((weightFormat/(heightFormat*heightFormat)).toFixed(2));
+    let heightFormat = height ? height.replace(",", ".") : null;
+    let weightFormat = weight ? weight.replace(",", ".") : null;
+    
+    if (heightFormat && weightFormat) {
+        let totalImc = (weightFormat / (heightFormat * heightFormat)).toFixed(2);
+        
+        setImc(totalImc);
+        setImcList((arr) => [...arr, { id: new Date().getTime(), imc: totalImc }]);
+    } else {
+        // Lidar com cenário em que altura ou peso são nulos
+        setImc(null);
+        setImcList([]);
+    }
 }
 
 
@@ -54,7 +73,6 @@ function validationImc(){
     }
 
 }
-//comentario
     return(
         <View style={styles.formContext}>
             {imc == null ? 
@@ -96,8 +114,26 @@ function validationImc(){
                     >
                     <Text style={styles.textButtonCalculator}>{textButton}</Text>
                     </TouchableOpacity>
+
+                    <FlatList
+                        showsVerticalScrollIndicator={false}
+                        style={styles.listImc}
+                        data={imcList.reverse()}
+                        renderItem={({item}) => {
+                            return (
+                                <View>
+                                    <Text style={styles.resultImcItem}>Data:<Text style={styles.textResulItemListData}>{formatarData(item.id)}</Text> </Text>
+                                    
+                                    <Text style={styles.textResulItemList}>  Resultado IMC: <Text style={styles.totalIMC}>{item.imc}</Text></Text>
+
+                                </View>
+                            ) 
+                        }}
+                        keyExtractor={(item) => item.id.toString()}
+                    />
                 </View>
             } 
+
         </View>      
     );
 }
