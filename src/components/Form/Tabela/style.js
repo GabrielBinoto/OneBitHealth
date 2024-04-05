@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
 
 
   textoTabela:{
+    marginTop:20,
     paddingBottom: 20,
     paddingTop: 20,
     paddingHorizontal: 30,
