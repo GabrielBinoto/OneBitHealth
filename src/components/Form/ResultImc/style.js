@@ -46,6 +46,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
     },
 
+    textoResult:{
+        fontSize:24,
+        paddingBottom: 20,
+    }
+
 
 });
 

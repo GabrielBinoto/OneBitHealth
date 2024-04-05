@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#ff0043",
         paddingTop: 14,
         paddingBottom: 14,
-        marginBottom:50,
+        marginBottom:5,
         marginLeft: 90,
     },
 
@@ -95,10 +95,12 @@ const styles = StyleSheet.create({
     totalIMC:{
         color:"#b94866",
         fontSize:18,
+    },
+
+    textoResult:{
+        fontSize: 22,
+        fontWeight: 'bold',
     }
-
-
-
 
 });
 

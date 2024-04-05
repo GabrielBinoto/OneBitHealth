@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {View, Text, TextInput, Vibration, TouchableOpacity, Keyboard, Pressable, FlatList } from "react-native"
 import ResultImc from "./ResultImc";
 import styles from "./style";
+import Tabela from "./Tabela";
 
 export default function Form(){
 
@@ -20,7 +21,6 @@ function formatarData(milliseconds) {
     const ano = data.getFullYear();
     return `${dia}/${mes}/${ano}`;
 }
-
 
 
 // Funcao para calcular o Imc
@@ -59,7 +59,7 @@ function validationImc(){
         setHeight(null);
         setWeight(null);
 
-        setMessageImc("Sei Imc é igual: ");
+        setMessageImc("Seu Imc é igual: ");
         setTextButton("Calcular Novamente");
         setErrorMessage(null);
         
@@ -103,7 +103,9 @@ function validationImc(){
                     >
                     <Text style={styles.textButtonCalculator}>{textButton}</Text>
                     </TouchableOpacity>
+                    <Tabela style={styles.textoTabela}/>
                 </Pressable>
+             
             : 
                 <View style={styles.exibiResult}>
                     <ResultImc messageResultImc ={messageImc} resultImc = {imc}/>
